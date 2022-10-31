@@ -1,10 +1,21 @@
 import React from "react";
-import { AiFillDelete } from "react-icons/ai";
+import { RiDeleteBin7Fill } from "react-icons/ri";
 import '../BtnEliminar/BtnEliminar.css';
 
-function BtnEliminar() {
+
+function BtnEliminar(props) {
+
+    function eliminar() {
+        if (confirm('Esta seguro De Eliminar esta tarea ?')) {
+
+            localStorage.removeItem(props.item);
+            alert("Tarea Eliminada")
+            window.location.reload(false);
+        }
+    }
+
     return (
-        <AiFillDelete className="btndelete" />
+        <RiDeleteBin7Fill onClick={eliminar} className="btndelete" />
     )
 }
 

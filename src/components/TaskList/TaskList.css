@@ -3,15 +3,20 @@
     padding: 1.8%;
     border: 1px solid;
     border-radius: 3px;
-    border-color: #e5e8eb;
+    border-color: #000000;
 }
 
 .buttonTarea {
-    width: 8%;
+    width: 10%;
     padding: 1.9%;
     margin-left: 13px;
     color: white;
-    background-color: #04cbf0;
+    background-color: #146bc8;
     border: 0;
     border-radius: 10%;
+}
+
+.tareas {
+    height: 376px;
+
 }

@@ -1,11 +1,23 @@
 import React from "react";
-import { AiFillEdit } from "react-icons/ai";
+import { TbEdit } from "react-icons/tb";
 import '../BtnEditar/BtnEditar.css'
 
-function BtnEditar() {
+function BtnEditar(props) {
+
+    function editar() {
+
+        let nuevaTarea = "";
+        nuevaTarea = prompt("Edite", props.tarea);
+        localStorage.setItem(props.item, nuevaTarea);
+        alert("Tarea Modificada");
+        window.location.reload(false);
+
+    }
+
     return (
-        <AiFillEdit className="btneditar" />
+        <TbEdit onClick={editar} className="btneditar" />
     )
+
 }
 
 export default BtnEditar 

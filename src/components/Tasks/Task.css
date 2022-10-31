@@ -1,21 +1,35 @@
-.tarea {
+.pendiente {
     display: flex;
     flex-direction: row;
     background-color: #eeefef;
     margin-bottom: 5px;
     border-radius: 5%;
     width: 86%;
-    align-items: baseline;
+    align-items: center;
+
+}
+
+.realizado {
+    display: flex;
+    flex-direction: row;
+    background-color: #eeefef;
+    margin-bottom: 5px;
+    border-radius: 5%;
+    width: 86%;
+    align-items: center;
+    text-decoration: line-through;
+
 }
 
 .checkbox-round {
     float: left;
     width: 1.3em;
     height: 1.3em;
-    background-color: white;
+    margin: revert;
+    background-color: rgb(210, 205, 205);
     border-radius: 50%;
     vertical-align: middle;
-    border: 1px solid #ddd;
+    border: 1px solid rgb(46, 46, 46);
     appearance: none;
     -webkit-appearance: none;
     outline: none;
@@ -23,7 +37,7 @@
 }
 
 .checkbox-round:checked {
-    background-color: #2acd72;
+    background-color: #990000;
 }
 
 .btns {

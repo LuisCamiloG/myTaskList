@@ -1,0 +1,32 @@
+.tarea {
+    display: flex;
+    flex-direction: row;
+    background-color: #eeefef;
+    margin-bottom: 5px;
+    border-radius: 5%;
+    width: 86%;
+    align-items: baseline;
+}
+
+.checkbox-round {
+    float: left;
+    width: 1.3em;
+    height: 1.3em;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.checkbox-round:checked {
+    background-color: #2acd72;
+}
+
+.btns {
+    margin-left: auto;
+    margin-right: 4%;
+}

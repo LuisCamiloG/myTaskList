@@ -1,0 +1,17 @@
+.inputTarea {
+    width: 73%;
+    padding: 1.8%;
+    border: 1px solid;
+    border-radius: 3px;
+    border-color: #e5e8eb;
+}
+
+.buttonTarea {
+    width: 8%;
+    padding: 1.9%;
+    margin-left: 13px;
+    color: white;
+    background-color: #04cbf0;
+    border: 0;
+    border-radius: 10%;
+}

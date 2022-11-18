@@ -2,17 +2,19 @@ import React from "react";
 import Task from '../Tasks/Task'
 import '../TaskList/TaskList.css'
 import { useState, useEffect } from 'react';
+import useTask from "../../Hooks/useTask";
 
 function TaskList() {
 
+
     let Data = [];
-    let ultimo = 0;
+    let lastDate = 0;
 
     function Mostrar() {
 
         for (const i in localStorage) {
             if (!isNaN(i)) {
-                ultimo = Number(i)
+                lastDate = Number(i)
                 Data.push(localStorage.getItem(i))
             }
         }
@@ -21,12 +23,15 @@ function TaskList() {
 
     }
 
-
     Mostrar();
+
+    /* --------------------------------------------------------------------------------------------------- */
 
 
     const [texto, setTexto] = useState("");
     const [contador, setContador] = useState(Data.length);
+
+    const { guardar } = useTask(contador, texto, setTexto, setContador)
 
     const handelImputChange = ({ target }) => {
         setTexto(target.value)
@@ -37,18 +42,18 @@ function TaskList() {
     }, [contador])
 
 
-    function guardar(e) {
-        if (texto !== "") {
-            localStorage.setItem(contador, texto)
-            alert("Nueva Tarea agregada");
-            setTexto("")
-            setContador(ultimo + 1);
-            Mostrar()
+    // function guardar(e) {
+    //     if (texto !== "") {
+    //         localStorage.setItem(contador, texto)
+    //         alert("Nueva Tarea agregada");
+    //         setTexto("")
+    //         setContador(lastDate + 1);
+    //         Mostrar()
 
-        } else {
-            alert("Añada una descripcion")
-        }
-    }
+    //     } else {
+    //         alert("Añada una descripcion")
+    //     }
+    // }
 
     function BuscarId(x) {
         for (const key in localStorage) {
@@ -62,7 +67,7 @@ function TaskList() {
     return (
 
         <div className='listaTareas'>
-            <center>
+            <div>
                 <form onSubmit={guardar}>
                     <input className='inputTarea' value={texto} type='text' onChange={handelImputChange} placeholder="Add your new todo" />
                     <button className='buttonTarea' type='submit'> + </button>
@@ -84,7 +89,7 @@ function TaskList() {
 
                     }
                 </div>
-            </center>
+            </div>
         </div>
     )
 

@@ -17,16 +17,29 @@ function Task(props) {
             setEstado("realizado");
         }
     }
-    return (
-        <div className={actualEstado}>
-            <input onChange={cambio} type="checkbox" checked={actualChecked} className="checkbox-round" />
-            <p >{props.tarea}</p>
-            <div className='btns'>
-                <BtnEditar tarea={props.tarea} item={props.item} />
-                <BtnEliminar item={props.item} />
-            </div>
 
-        </div>
+    return (
+
+        <p>
+            <div className={actualEstado}>
+                <input
+                    onChange={cambio}
+                    type="checkbox"
+                    checked={actualChecked}
+                    className="checkbox-round"
+                />
+                <p>{props.tarea}</p>
+
+
+
+                <div className='btns'>
+                    <BtnEditar tarea={props.tarea} item={props.item} />
+                    <BtnEliminar item={props.item} />
+                </div>
+
+            </div>
+            <p className="parrafo">{props.description}</p>
+        </p>
     )
 }
 

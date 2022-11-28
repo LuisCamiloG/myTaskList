@@ -1,11 +1,19 @@
-function useTask(params1, params2, params3, params4) {
+function useTask(
+  contador,
+  textoTarea,
+  contadorSet,
+  textoSet,
+  descripcion,
+  descripcionSet
+) {
   const guardar = (e) => {
-    alert(params2);
-    if (params2 !== "") {
-      localStorage.setItem(params1, params2);
+    alert(textoTarea);
+    if (textoTarea !== "") {
+      localStorage.setItem(contador, JSON.stringify([textoTarea, descripcion]));
       alert("Nueva Tarea agregada");
-      params3("");
-      params4(lastDate + 1);
+      contadorSet("");
+      textoSet(lastDate + 1);
+      descripcionSet(lastDate + 1);
     } else {
       alert("Añada una descripcion");
     }

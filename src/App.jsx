@@ -1,16 +1,14 @@
 import React from "react";
-import Title from './components/Title/Title'
-import TaskList from './components/TaskList/TaskList'
-import Footer from './components/Footer/Footer'
-import '../src/App.css'
-
+import Enrutador from "./components/Enrutador/Enrutador";
+import './components/Home/Home.css'
+import './components/Home/Home.css'
 function App() {
     return (
         <div className="App">
-            <Title />
-            <TaskList />
-            <Footer />
-        </div>
+
+            <Enrutador />
+
+        </div >
     );
 }
 
